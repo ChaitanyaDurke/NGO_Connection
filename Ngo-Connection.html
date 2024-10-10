@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Volunteer Connect</title>
+
+<style>
+  /* General Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: #333;
+  }
+
+
+  /* Header Styling with Blur Effect */
+header {
+    background-color: rgba(131, 178, 113, 0.8); /* Slightly transparent background */
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #4F6F52;
+  }
+
+  /* Hero Section */
+  #hero {
+    background-image: url(pexels-sohi-807598.jpg);
+    background-size: cover; /* Make the image cover the entire section */
+    background-position: center; /* Centers the image in the section */
+    height: 80vh; /* Ensure the section has height to show the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color for visibility */
+    text-align: center;
+}
+
+  #hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+
+  #hero h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+    color: #E8DFCA;
+    margin: 20px 0;
+  }
+
+  /* Button Styling */
+  .btn {
+    padding: 10px 20px;
+    background-color: #E7F0D2;
+    color: rgb(32, 31, 31);
+    
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #4e8454;
+    transform: scale(1.05);
+  }
+
+  .btn-outline {
+    background: none;
+    color: #24ef5a;
+    border: 2px solid #24ef5a;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #24ef5a;
+    color: white;
+  }
+
+  /* Core Info Section */
+  #core-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #fff;
+  }
+
+  .info-box {
+    text-align: center;
+    width: 30%;
+  }
+
+  .info-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .info-box p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Registration Section */
+  #register {
+    display: none;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  form input[type="submit"] {
+    background-color: #24ef5a;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  form input[type="submit"]:hover {
+    background-color: #1dd249;
+  }
+  .ngoForm{
+    align-items: center;
+    text-align: center;
+
+  }
+  .volForm{
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    /* background-color: #333; */ background-color: rgba(131, 178, 113, 0.8); /* Slightly transparent background */
+    color: white;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #core-info {
+      flex-direction: column;
+    }
+
+    .info-box {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>NGO Volunteer Connect</h1>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Make a Difference Today</h2>
+      <p>Connect with NGOs and volunteers around the world to bring positive change.</p>
+      <a href="#contact" class="btn">Join Us</a>
+    </div>
+  </section>
+    <!-- About Us Section -->
+    <section id="about" style="padding: 50px 0; background-color: #E7F0D2;">
+      <div style="text-align: center;">
+        <h2>About Us</h2>
+        <p style="width: 80%; margin: 0 auto; color: #666;">
+          NGO Volunteer Connect is a platform dedicated to bridging the gap between passionate volunteers and NGOs. We aim to foster a network where individuals can contribute their skills to make a positive impact on society. Whether you’re an NGO looking for help or a volunteer ready to make a difference, our platform is designed to create meaningful connections.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Opportunities Section -->
+    <section id="opportunities" style="padding: 50px 0; background-color: #fff;">
+      <div style="text-align: center;">
+        <h2>Opportunities</h2>
+        <div style="display: flex; justify-content: space-around; margin-top: 30px;">
+          <div class="info-box" style="width: 30%;">
+            <h3>Health and Wellness</h3>
+            <p>Join NGOs working on health projects and help communities with basic healthcare needs.</p>
+            <a href="#register" class="btn btn-outline">Apply</a>
+          </div>
+          <div class="info-box" style="width: 30%;">
+            <h3>Education for All</h3>
+            <p>Volunteer in educational programs designed to empower underprivileged children.</p>
+            <a href="#register" class="btn btn-outline">Apply</a>
+          </div>
+          <div class="info-box" style="width: 30%;">
+            <h3>Environmental Protection</h3>
+            <p>Support NGOs focused on environmental conservation and sustainability.</p>
+            <a href="#register" class="btn btn-outline">Apply</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 50px 0; background-color: #f9f9f9;">
+      <div style="text-align: center;">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further assistance, feel free to reach out to us.</p>
+        <form style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin: 10px 0;">
+          <textarea placeholder="Your Message" rows="4" required style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
+          <input type="submit" value="Send Message" style="background-color: #24ef5a; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+        </form>
+      </div>
+    </section>
+  
+  
+
+  <!-- Core Info Section -->
+  <section id="core-info">
+    <div class="info-box">
+      <h3>For Volunteers</h3>
+      <p>Find opportunities that match your passion and skills.</p>
+      <a href="#volunteerForm" class="btn btn-outline">Learn More</a>
+    </div>
+
+    <div class="info-box">
+      <h3>For NGOs</h3>
+      <p>Discover passionate volunteers ready to support your cause.</p>
+      <a href="#ngoForm" class="btn btn-outline">Join Us</a>
+    </div>
+  </section>
+
+  <!-- Registration Forms Section -->
+  <section id="register">
+    <div id="ngoForm" >
+      <div class ="ngoForm">
+      <h3>NGO Registration</h3>
+    </div>
+      <form id="ngoRegistrationForm">
+        <input type="text" placeholder="NGO Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Brief Description of NGO" rows="4" required></textarea>
+        <input type="submit" value="Register">
+      </form>
+    </div>
+
+    <div id="volunteerForm" >
+      <div  class ="volForm">
+      <h3>Volunteer Registration</h3>
+    </div>
+      <form id="volunteerRegistrationForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Skills and Interests" rows="4" required></textarea>
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Contact us at: <a href="mailto:support@volunteerconnect.com">support@volunteerconnect.com</a></p>
+  </footer>
+
+  <script>
+    // Toggle between NGO and Volunteer forms
+    document.querySelectorAll('.btn-outline').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const formId = this.getAttribute('href');
+        document.querySelector('#register').style.display = 'block'; // Show registration section
+        document.querySelectorAll('#register > div').forEach(div => div.style.display = 'none'); // Hide both forms
+        document.querySelector(formId).style.display = 'block'; // Show the selected form
+      });
+    });
+
+    // Form Validation Example for NGO Registration
+    const ngoForm = document.getElementById('ngoRegistrationForm');
+    ngoForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('NGO Registration Successful!');
+      ngoForm.reset();
+    });
+
+    // Form Validation Example for Volunteer Registration
+    const volunteerForm = document.getElementById('volunteerRegistrationForm');
+    volunteerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Volunteer Registration Successful!');
+      volunteerForm.reset();
+    });
+  </script>
+
+</body>
+</html>
