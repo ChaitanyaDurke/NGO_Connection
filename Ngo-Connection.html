@@ -17,6 +17,96 @@
   }
 
 
+       
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: rgba(131, 178, 113, 0.8);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #4F6F52;
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(131, 178, 113, 0.8);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+
   /* Header Styling with Blur Effect */
 header {
     background-color: rgba(131, 178, 113, 0.8); /* Slightly transparent background */
@@ -220,20 +310,29 @@ header {
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
+ <!-- Responsive Header Section -->
+<header>
     <nav>
       <div class="logo">
         <h1>NGO Volunteer Connect</h1>
       </div>
-      <ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-list">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#opportunities">Opportunities</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+     
     </nav>
   </header>
+
+
+
 
   <!-- Hero Section -->
   <section id="hero">
@@ -243,15 +342,50 @@ header {
       <a href="#contact" class="btn">Join Us</a>
     </div>
   </section>
-    <!-- About Us Section -->
-    <section id="about" style="padding: 50px 0; background-color: #E7F0D2;">
-      <div style="text-align: center;">
-        <h2>About Us</h2>
-        <p style="width: 80%; margin: 0 auto; color: #666;">
-          NGO Volunteer Connect is a platform dedicated to bridging the gap between passionate volunteers and NGOs. We aim to foster a network where individuals can contribute their skills to make a positive impact on society. Whether you’re an NGO looking for help or a volunteer ready to make a difference, our platform is designed to create meaningful connections.
+    
+
+
+  <!-- About Us Section -->
+<section id="about-us" style="padding: 60px 0; background-color: #E7F0D2;">
+    <div style="width: 80%; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 2.5rem; color: #4F6F52;">About NGO Volunteer Connect</h2>
+      <p style="color: #555; margin: 20px 0; font-size: 1.2rem;">
+        At NGO Volunteer Connect, we are dedicated to bridging the gap between volunteers and NGOs to bring about meaningful change. Our mission is to create a thriving network of passionate individuals and organizations working towards a better world.
+      </p>
+  
+      <!-- Mission Section -->
+      <div style="margin-top: 50px;">
+        <h3 style="font-size: 2rem; color: #83B271;">Our Mission</h3>
+        <p style="color: #666; font-size: 1.1rem; width: 75%; margin: 10px auto;">
+          Our mission is to empower communities by connecting individuals with the causes that matter most. Whether you’re an NGO looking for skilled volunteers or a volunteer ready to make a difference, we aim to create opportunities that foster growth, development, and positive change.
         </p>
+      </div><!-- Timeline Section with Cards -->
+      <div style="margin-top: 60px; text-align: center;">
+        <h3 style="font-size: 2rem; color: #ABCB89; text-align: center;">Our Journey</h3>
+      
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 40px;">
+          <!-- Card 1 -->
+          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
+            <h4 style="color: #4F6F52; font-size: 1.5rem;">Founded in 2019</h4>
+            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We began with a vision to create a platform where passionate individuals could easily connect with NGOs, driving impactful social changes.</p>
+          </div>
+      
+          <!-- Card 2 -->
+          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
+            <h4 style="color: #4F6F52; font-size: 1.5rem;">Expanded in 2021</h4>
+            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We expanded our platform globally, enabling volunteers and NGOs across different continents to collaborate on diverse projects.</p>
+          </div>
+      
+          <!-- Card 3 -->
+          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
+            <h4 style="color: #4F6F52; font-size: 1.5rem;">Looking Forward</h4>
+            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We are committed to growing our network, introducing new features, and ensuring that every individual can contribute meaningfully to the causes they care about.</p>
+          </div>
+        </div>
       </div>
-    </section>
+      
+  </section>
+  
   
     <!-- Opportunities Section -->
     <section id="opportunities" style="padding: 50px 0; background-color: #fff;">
@@ -291,7 +425,7 @@ header {
       </div>
     </section>
   
-  
+
 
   <!-- Core Info Section -->
   <section id="core-info">
@@ -368,6 +502,38 @@ header {
       volunteerForm.reset();
     });
   </script>
+
+<script>
+    // Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('nav ul');
+    
+    mobileMenu.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+    </script>
+     <script>
+        // Toggle Donate Form Visibility
+        const donateBtn = document.getElementById('donateBtn');
+        const donateForm = document.getElementById('donate-form');
+
+        donateBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            donateForm.classList.toggle('active'); // Toggle the 'active' class to pop the form
+            if (donateForm.classList.contains('active')) {
+                donateForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Form Submission Example
+        const donationForm = document.getElementById('donationForm');
+        donationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your donation!');
+            donationForm.reset();
+            donateForm.classList.remove('active'); // Hide the form after submission
+        });
+    </script>
 
 </body>
 </html>

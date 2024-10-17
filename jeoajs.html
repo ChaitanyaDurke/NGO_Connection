@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Volunteer Connect</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: rgba(131, 178, 113, 0.8);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4F6F52;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-image: url('pexels-sohi-807598.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        #hero h2 {
+            font-size: 2.5rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #E8DFCA;
+        }
+
+        /* Button Styling */
+        .btn, .donate-btn {
+            padding: 10px 20px;
+            background-color: #E7F0D2;
+            color: rgb(32, 31, 31);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover, .donate-btn:hover {
+            background-color: #4e8454;
+            transform: scale(1.05);
+        }
+
+        /* About Us Section */
+        #about-us {
+            padding: 60px 0;
+            background-color: #E7F0D2;
+            text-align: center;
+        }
+
+        #about-us h2 {
+            font-size: 2.5rem;
+            color: #4F6F52;
+        }
+
+        #about-us p {
+            color: #555;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #about-us .journey {
+            margin-top: 60px;
+        }
+
+        #about-us .journey h3 {
+            font-size: 2rem;
+            color: #ABCB89;
+        }
+
+        .info-card {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            margin: 15px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(131, 178, 113, 0.8);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                background-color: rgba(131, 178, 113, 0.8);
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            nav ul.show {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            #about-us .info-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Responsive Header Section -->
+<header>
+    <nav>
+        <div class="logo">
+            <h1>NGO Volunteer Connect</h1>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="#opportunities">Opportunities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" class="donate-btn" id="donateBtn">Donate</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero">
+    <div class="hero-content">
+        <h2>Make a Difference Today</h2>
+        <p>Connect with NGOs and volunteers around the world to bring positive change.</p>
+        <a href="#contact" class="btn">Join Us</a>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about-us">
+    <h2>About NGO Volunteer Connect</h2>
+    <p>At NGO Volunteer Connect, we are dedicated to bridging the gap between volunteers and NGOs to bring about meaningful change. Our mission is to create a thriving network of passionate individuals and organizations working towards a better world.</p>
+    
+    <div class="journey">
+        <h3>Our Journey</h3>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 40px;">
+            <div class="info-card">
+                <h4>Founded in 2019</h4>
+                <p>We began with a vision to create a platform where passionate individuals could easily connect with NGOs, driving impactful social changes.</p>
+            </div>
+            <div class="info-card">
+                <h4>Expanded in 2021</h4>
+                <p>We expanded our reach to include more NGOs and volunteers, ensuring we cover a diverse range of causes and needs.</p>
+            </div>
+            <div class="info-card">
+                <h4>Now Serving Worldwide</h4>
+                <p>Today, we connect thousands of volunteers and NGOs across the globe, fostering collaboration for social good.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Registration Section -->
+<section id="register">
+    <h2>Register as a Volunteer</h2>
+    <form style="width: 80%; margin: 20px auto; display: flex; flex-direction: column;">
+        <input type="text" placeholder="Full Name" required style="padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;">
+        <input type="email" placeholder="Email" required style="padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;">
+        <textarea placeholder="Your Skills" required style="padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;"></textarea>
+        <button type="submit" style="padding: 10px; background-color: #E7F0D2; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 NGO Volunteer Connect. All rights reserved.</p>
+</footer>
+
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>
