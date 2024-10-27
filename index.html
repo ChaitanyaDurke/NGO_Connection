@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="header-container">
+        <h1 class="logo">Volunteer Hub</h1>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+           
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+            <a href="#signup">Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-overlay">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Become a part of our volunteer community and help bring positive change to the world.</p>
+        <a href="#signup" class="btn-primary">Get Involved</a>
+    </div>
+</section>
+
+<!-- Sign-Up Form Section -->
+<section class="form-section" id="signup">
+    <h2>Volunteer Sign-Up Form</h2>
+    <form action="/submit_form" method="POST" class="form-container">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability" required>
+            <option value="weekly">Weekly</option>
+            <option value="bi-weekly">Bi-Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+
+        <label for="skills">Skills or Interests:</label>
+        <textarea id="skills" name="skills" rows="4"></textarea>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</section>
+
+<!-- Events Section -->
+<section class="events" id="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-list">
+        <div class="event-item">
+            <h3>Community Clean-Up</h3>
+            <p>Date: 10th November 2024</p>
+            <p>Location: Central Park</p>
+        </div>
+        <div class="event-item">
+            <h3>Tree Planting Drive</h3>
+            <p>Date: 15th November 2024</p>
+            <p>Location: Green Valley</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2024 Volunteer Management System. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

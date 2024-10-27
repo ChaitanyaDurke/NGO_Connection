@@ -6,6 +6,187 @@
     <title>NGO Volunteer Connect</title>
 
 <style>
+
+header {
+    background-color: #fff;
+    padding: 0px;
+    width: 100%;
+    transition: opacity 0.5s ease-out;
+}
+
+header.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right ul li a {
+  text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    position: relative;
+}
+
+
+.nav-right ul li a:hover {
+  font-size: 1.3rem; /* Increase font size on hover */
+    transform: scale(1.2); /* Enlarge text slightly */
+    color: #162424; /* Optional: Change color on hover */
+}
+
+/* For the logo, if you want to apply hover effect as well */
+.logo-left h1 {
+  font-size: 2.2rem; /* Original font size */
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease; /* Smooth transition */
+}
+
+
+
+ /* Header Styling with Enhanced Visuals */
+ header {
+    background: linear-gradient(135deg, #83b271, #4e8454); /* Gradient background for a modern look */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for background change */
+  }
+
+  /* Modify nav to make it more sleek and centered */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo h1 {
+    font-size: 2.2rem; /* Larger font size for the logo */
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* A stylish font for the logo */
+    letter-spacing: 2px; /* Slight spacing between letters */
+  }
+
+  /* Navigation Styling */
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s, border-bottom 0.3s ease; /* Smooth transitions for hover effects */
+    position: relative;
+  }
+
+  nav ul li a:hover {
+    color: #6b5151; /* Brighten color on hover */
+    border-bottom: 2px solid #ffffff; /* Add an underline on hover */
+  }
+
+  /* Sticky background color change on scroll */
+  header.sticky {
+    background: rgba(131, 178, 113, 0.9);
+    backdrop-filter: blur(5px); /* Add some blur when scrolling */
+  }
+
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem; /* Reduce font size for smaller screens */
+    }
+  }
+  
+/* Opportunities Section */
+.opportunities-section {
+  background: #f4f4f4;
+  padding: 80px 0;
+}
+
+.opportunities-section h2 {
+  font-size: 2.5em;
+  text-align: center;
+  color: #1b4332;
+  margin-bottom: 40px;
+}
+
+.opportunity-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.opportunity-item {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin-bottom: 40px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opportunity-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.opportunity-item h3 {
+  color: #2d6a4f;
+  margin-bottom: 15px;
+}
+
+.opportunity-item p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.opportunity-item .cta-button {
+  background: #1b4332;
+  font-size: 1em;
+}
+
+.opportunity-item .cta-button:hover {
+  background: #081c15;
+}
+
+
+
+
+
   /* General Body Styling */
   body {
     font-family: 'Arial', sans-serif;
@@ -15,96 +196,6 @@
     scroll-behavior: smooth;
     color: #333;
   }
-
-
-       
-  body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background-color: rgba(131, 178, 113, 0.8);
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.logo h1 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin: 0;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  gap: 25px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #4F6F52;
-}
-
-/* Mobile Menu Toggle Button */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgba(131, 178, 113, 0.8);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  nav ul.show {
-    transform: translateX(0);
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
 
 
   /* Header Styling with Blur Effect */
@@ -268,6 +359,89 @@ header {
     border: none;
     cursor: pointer;
   }
+  .overlay-text h2, 
+.overlay-text p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adjust values as needed */
+}
+.opportunities-image img {
+    opacity: 0.8; /* Adjust to your preference */
+}
+
+
+
+
+
+  /* Opportunities Section Styling */
+  #opportunities {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #f4f4f4;
+  }
+
+  .opportunities-text {
+    flex: 1;
+    padding-right: 30px; /* Adds padding to the right side of the text */
+  }
+
+  .opportunities-text h3 {
+    font-size: 2rem;
+    color: #4e8454;
+    margin-bottom: 20px;
+  }
+
+  .opportunities-text ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .opportunities-text ul li {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    padding-left: 10px;
+  }
+
+  .opportunities-text ul li::before {
+    content: '•';
+    color: #24ef5a;
+    font-weight: bold;
+    display: inline-block; 
+    width: 20px; 
+    margin-left: -20px; /* Position the bullet outside */
+  }
+
+  .opportunities-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .opportunities-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Gives the image rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #opportunities {
+      flex-direction: column;
+    }
+
+    .opportunities-text {
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+
+
+
+
 
   form input[type="submit"]:hover {
     background-color: #1dd249;
@@ -306,129 +480,220 @@ header {
       margin-bottom: 20px;
     }
   }
+
+  /* Contact Section Styles */
+#contact {
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #24ef5a; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+.email-input {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+/* Submit Button Hover Effect */
+input[type="submit"]:hover {
+    background-color: #1fbf4d; /* Darken the button on hover */
+}
+
 </style>
 </head>
 <body>
-
- <!-- Responsive Header Section -->
-<header>
+  <header id="main-header">
     <nav>
-      <div class="logo">
-        <h1>NGO Volunteer Connect</h1>
-      </div>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#opportunities">Opportunities</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-     
+        <div class="logo-left">
+            <h1>NGO Connect</h1>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#opportunities">Opportunities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
+</header>
 
 
-
+  
+  
+  
+  
 
   <!-- Hero Section -->
-  <section id="hero">
+  <!-- Add this section inside the Hero Section -->
+<!-- Add this section inside the Hero Section -->
+<section id="hero">
     <div class="hero-content">
       <h2>Make a Difference Today</h2>
       <p>Connect with NGOs and volunteers around the world to bring positive change.</p>
-      <a href="#contact" class="btn">Join Us</a>
+    
+      <div style="margin-top: 20px;">
+        <a href="#register" class="btn btn-outline" style="margin-right: 15px;">Search NGOs</a>
+        <a href="demo.html" class="btn btn-outline">Sign Up as Volunteer</a>
+      </div>
     </div>
   </section>
+<!-- About Us Section -->
+<!-- About Us Section -->
+<section id="about" style="padding: 50px 0; background-color: #E7F0D2;">
+  <div style="text-align: center;">
+    <h2 style="color: #4A7C59;">About Us</h2>
+    <p style="width: 80%; margin: 0 auto; color: #666;">
+      NGO Volunteer Connect is a platform dedicated to bridging the gap between passionate volunteers and NGOs. Our mission is to foster a vibrant network where individuals can contribute their skills to make a positive impact on society. Whether you’re an NGO looking for help or a volunteer ready to make a difference, our platform is designed to create meaningful connections.
+    </p>
     
-
-
-  <!-- About Us Section -->
-<section id="about-us" style="padding: 60px 0; background-color: #E7F0D2;">
-    <div style="width: 80%; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 2.5rem; color: #4F6F52;">About NGO Volunteer Connect</h2>
-      <p style="color: #555; margin: 20px 0; font-size: 1.2rem;">
-        At NGO Volunteer Connect, we are dedicated to bridging the gap between volunteers and NGOs to bring about meaningful change. Our mission is to create a thriving network of passionate individuals and organizations working towards a better world.
+    <div style="margin: 30px 0;">
+      <h3 style="color: #4A7C59;">Our Mission</h3>
+      <p style="color: #666;">
+        To empower communities by connecting passionate volunteers with NGOs, facilitating impactful projects and initiatives. Our mission is built on the following core ingredients:
       </p>
-  
-      <!-- Mission Section -->
-      <div style="margin-top: 50px;">
-        <h3 style="font-size: 2rem; color: #83B271;">Our Mission</h3>
-        <p style="color: #666; font-size: 1.1rem; width: 75%; margin: 10px auto;">
-          Our mission is to empower communities by connecting individuals with the causes that matter most. Whether you’re an NGO looking for skilled volunteers or a volunteer ready to make a difference, we aim to create opportunities that foster growth, development, and positive change.
-        </p>
-      </div><!-- Timeline Section with Cards -->
-      <div style="margin-top: 60px; text-align: center;">
-        <h3 style="font-size: 2rem; color: #ABCB89; text-align: center;">Our Journey</h3>
-      
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 40px;">
-          <!-- Card 1 -->
-          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
-            <h4 style="color: #4F6F52; font-size: 1.5rem;">Founded in 2019</h4>
-            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We began with a vision to create a platform where passionate individuals could easily connect with NGOs, driving impactful social changes.</p>
-          </div>
-      
-          <!-- Card 2 -->
-          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
-            <h4 style="color: #4F6F52; font-size: 1.5rem;">Expanded in 2021</h4>
-            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We expanded our platform globally, enabling volunteers and NGOs across different continents to collaborate on diverse projects.</p>
-          </div>
-      
-          <!-- Card 3 -->
-          <div style="background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 30%; margin: 15px; position: relative;">
-            <h4 style="color: #4F6F52; font-size: 1.5rem;">Looking Forward</h4>
-            <p style="color: #555; font-size: 1rem; margin-top: 10px;">We are committed to growing our network, introducing new features, and ensuring that every individual can contribute meaningfully to the causes they care about.</p>
-          </div>
+      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+        <div style="background-color: #ffffff; border: 1px solid #4A7C59; border-radius: 8px; padding: 20px; margin: 10px; width: 200px; text-align: center;">
+          <h4 style="color: #4A7C59;">🌱 Empowerment</h4>
+          <p style="color: #666;">Enabling individuals to contribute their unique skills and talents.</p>
+        </div>
+        <div style="background-color: #ffffff; border: 1px solid #4A7C59; border-radius: 8px; padding: 20px; margin: 10px; width: 200px; text-align: center;">
+          <h4 style="color: #4A7C59;">🌍 Collaboration</h4>
+          <p style="color: #666;">Creating partnerships between NGOs and volunteers to achieve common goals.</p>
+        </div>
+        <div style="background-color: #ffffff; border: 1px solid #4A7C59; border-radius: 8px; padding: 20px; margin: 10px; width: 200px; text-align: center;">
+          <h4 style="color: #4A7C59;">🔍 Awareness</h4>
+          <p style="color: #666;">Raising awareness about social issues and the importance of community involvement.</p>
+        </div>
+        <div style="background-color: #ffffff; border: 1px solid #4A7C59; border-radius: 8px; padding: 20px; margin: 10px; width: 200px; text-align: center;">
+          <h4 style="color: #4A7C59;">🚀 Innovation</h4>
+          <p style="color: #666;">Encouraging innovative solutions for pressing challenges faced by communities.</p>
+        </div>
+        <div style="background-color: #ffffff; border: 1px solid #4A7C59; border-radius: 8px; padding: 20px; margin: 10px; width: 200px; text-align: center;">
+          <h4 style="color: #4A7C59;">📈 Sustainability</h4>
+          <p style="color: #666;">Promoting sustainable practices in all volunteer initiatives to ensure lasting impact.</p>
         </div>
       </div>
-      
-  </section>
-  
-  
-    <!-- Opportunities Section -->
-    <section id="opportunities" style="padding: 50px 0; background-color: #fff;">
-      <div style="text-align: center;">
-        <h2>Opportunities</h2>
-        <div style="display: flex; justify-content: space-around; margin-top: 30px;">
-          <div class="info-box" style="width: 30%;">
-            <h3>Health and Wellness</h3>
-            <p>Join NGOs working on health projects and help communities with basic healthcare needs.</p>
-            <a href="#register" class="btn btn-outline">Apply</a>
-          </div>
-          <div class="info-box" style="width: 30%;">
-            <h3>Education for All</h3>
-            <p>Volunteer in educational programs designed to empower underprivileged children.</p>
-            <a href="#register" class="btn btn-outline">Apply</a>
-          </div>
-          <div class="info-box" style="width: 30%;">
-            <h3>Environmental Protection</h3>
-            <p>Support NGOs focused on environmental conservation and sustainability.</p>
-            <a href="#register" class="btn btn-outline">Apply</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Contact Section -->
-    <section id="contact" style="padding: 50px 0; background-color: #f9f9f9;">
-      <div style="text-align: center;">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need further assistance, feel free to reach out to us.</p>
-        <form style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
-          <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 10px 0;">
-          <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin: 10px 0;">
-          <textarea placeholder="Your Message" rows="4" required style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
-          <input type="submit" value="Send Message" style="background-color: #24ef5a; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-        </form>
-      </div>
-    </section>
-  
+    </div>
 
+    <!-- <a href="#register" class="btn btn-outline" style="margin-top: 30px; padding: 10px 20px; background-color: #4A7C59; color: white; text-decoration: none; border-radius: 5px;">Join Us Now</a> -->
+  </div>
+</section>
+
+
+
+
+
+
+     <!-- Opportunities Section -->
+  <section id="opportunities">
+    <div class="opportunities-text">
+      <h3>Immerging Opportunities</h3>
+<ul>
+  <li>Environmental Conservation Projects</li>
+  <li>Tree Plantation Initiatives</li>
+  <li>Fundraising and Campaigning</li>
+  <li>Legal Aid and Human Rights Support</li>
+  <li>Tree Planting and Environmental Education</li>
+  <li>Soil Preparation and Maintenance</li>
+  <li>Monitoring Tree Growth</li>
+  <li>Awareness Campaigns</li>
+</ul>
+
+    </div>
+   
+    <div class="opportunities-image" style="position: relative; text-align: center; color: white;">
+      <img src="pexels-felixmittermeier-957024.jpg" alt="Volunteers working together" style="width: 100%; height: auto;">
+      <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); border-radius: 39px;"></div>
+      <div class="overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <h2>"Small acts, when multiplied by millions of people, can transform the world."<br>
+          -Howard Zinn</h2>
+        <!-- <p>Together, we can create a greener tomorrow.</p> -->
+      </div>
+    </div>
+    
+    
+    
+    
+  </section>
+  <section id="opportunities" class="opportunities-section">
+    <h2>Volunteer Opportunities</h2>
+    <div class="opportunity-list">
+      <!-- Opportunity 1 -->
+      <div class="opportunity-item">
+        <h3>Environmental Cleanup Drive</h3>
+        <p>Help us clean up local beaches and parks. We need volunteers to join us in our next cleanup event.</p>
+        <a href="#register" class="cta-button">Apply Now</a>
+      </div>
+
+      <!-- Opportunity 2 -->
+      <div class="opportunity-item">
+        <h3>Teach Underprivileged Children</h3>
+        <p>Join us in providing free education to children in underserved communities. Volunteer your time and skills to help them succeed.</p>
+        <a href="#register" class="cta-button">Apply Now</a>
+      </div>
+
+      <!-- Opportunity 3 -->
+      <div class="opportunity-item">
+        <h3>Food Distribution Program</h3>
+        <p>Be part of a team that provides meals to families in need. Your help can make a big difference.</p>
+        <a href="#register" class="cta-button">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  
+ <!-- Contact Section -->
+<section id="contact" style="padding: 50px 0; background-color: #9879791d;">
+  <div style="text-align: center;">
+    <h2 style="color: #4A7C59;">Contact Us</h2>
+    <p style="color: #352c2c87;">If you have any questions or need further assistance, feel free to reach out to us.</p>
+    
+    <div style="margin: 30px 0; display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+      <div style="flex: 1; max-width: 600px; margin: 0 20px; position: relative; text-align: center;">
+        <div style="background-image: url('pexels-felixmittermeier-957024.jpg'); background-size: cover; background-position: center; border-radius: 10px; padding: 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+          <form style="background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+            <input type="text" placeholder="Your Name" required style="width: 50%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+            <div style="width: 100%; display: flex; justify-content: center;">
+              <input type="email" class="email-input" placeholder="Your Email" required>
+          </div>            <textarea placeholder="Your Message" rows="4" required style="width: 50%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            <input type="submit" value="Send Message" style="background-color: #24ef5a; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; transition: background-color 0.3s; width: 50%;">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+  
 
   <!-- Core Info Section -->
-  <section id="core-info">
+  <section id="core-info"  style="background-color: #E7F0D2;">
     <div class="info-box">
       <h3>For Volunteers</h3>
       <p>Find opportunities that match your passion and skills.</p>
@@ -475,6 +740,18 @@ header {
   </footer>
 
   <script>
+    window.addEventListener("scroll", function() {
+    const header = document.getElementById("main-header");
+    if (window.scrollY > 50) {  // Change '50' to adjust the point when the header should disappear
+        header.classList.add("hidden");
+    } else {
+        header.classList.remove("hidden");
+    }
+});
+
+  </script>
+
+  <script>
     // Toggle between NGO and Volunteer forms
     document.querySelectorAll('.btn-outline').forEach(btn => {
       btn.addEventListener('click', function(e) {
@@ -498,42 +775,21 @@ header {
     const volunteerForm = document.getElementById('volunteerRegistrationForm');
     volunteerForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Volunteer Registration Successful!');
+      alert('Volunteer Registration Successful! We will inform you shortly .');
       volunteerForm.reset();
     });
   </script>
-
-<script>
-    // Mobile Menu Toggle
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('nav ul');
-    
-    mobileMenu.addEventListener('click', () => {
-      navList.classList.toggle('show');
+  <script>
+    // JavaScript to add 'sticky' class on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
     });
-    </script>
-     <script>
-        // Toggle Donate Form Visibility
-        const donateBtn = document.getElementById('donateBtn');
-        const donateForm = document.getElementById('donate-form');
-
-        donateBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            donateForm.classList.toggle('active'); // Toggle the 'active' class to pop the form
-            if (donateForm.classList.contains('active')) {
-                donateForm.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        // Form Submission Example
-        const donationForm = document.getElementById('donationForm');
-        donationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your donation!');
-            donationForm.reset();
-            donateForm.classList.remove('active'); // Hide the form after submission
-        });
-    </script>
+  </script>
 
 </body>
-</html>
+</html> 
